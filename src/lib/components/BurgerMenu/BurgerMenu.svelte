@@ -16,7 +16,7 @@
   
   <style>
     .BurgerMenu {
-      background-color: #ff99f8;
+        background: rgba(255, 255, 255, 0.97);
       height: 100vh;
       left: 0;
       padding: 2rem 1rem;
@@ -31,11 +31,13 @@
   
     .BurgerMenu.open {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      
     }
 
     .BurgerMenu h2 {
         padding: 2.5rem 0;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style: italic;
         font-weight: 400;
         font-size: 2rem;
         line-height: 1.25;
@@ -48,6 +50,7 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        color: black;
     }
 
     .BurgerMenu li {
