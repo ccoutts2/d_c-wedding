@@ -6,11 +6,20 @@ import BurgerButton from "$lib/components/buttons/BurgerButton/BurgerButton.svel
 import BurgerMenu from "$lib/components/BurgerMenu/BurgerMenu.svelte";
   import Message from '$lib/components/Message/Message.svelte';
   import Invitation from '$lib/components/Invitation/Invitation.svelte';
+  import SectionHeader from '$lib/components/SectionHeader/SectionHeader.svelte';
 
 export let isOpen: boolean = false;
 const toggleMenu = () => {
         isOpen =!isOpen;
     }  
+
+ export let scrollIntoView = ( target: HTMLAnchorElement )  => {
+    const el = document.querySelector(target.getAttribute('href')!);
+    if (!el) return;
+    el.scrollIntoView({
+        behavior: 'smooth'
+    });
+ }   
 </script>
 
 <main>
@@ -19,7 +28,7 @@ const toggleMenu = () => {
     <BurgerButton {toggleMenu} {isOpen} />
 </nav>
 
-<BurgerMenu {isOpen} />
+<BurgerMenu {isOpen} {scrollIntoView} />
 
 <div class='Image'>
     <img src={chris} alt=""/>
@@ -30,6 +39,10 @@ const toggleMenu = () => {
 
 <div class="RightCol">
 <Invitation />
+
+<section>
+    <SectionHeader label="Order of the day" />
+</section>
 </div>
 
 
@@ -51,7 +64,8 @@ const toggleMenu = () => {
     .RightCol {
         flex: 1;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .Image {

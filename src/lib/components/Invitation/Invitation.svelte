@@ -1,22 +1,20 @@
 <script lang="ts">
   import CountDown from "../CountDown/CountDown.svelte";
 
-
 </script>
 
-<section class="Invitation">
+<div class="Invitation" id="schedule">
 
-    <div class="Date Invitation__date">
-        <p>Saturday</p>
-        <p>July 11, 2026</p>
-    </div>
+    <dl class="Date Invitation__date">
+        <dt class="visually-hidden">Date:</dt>
+        <dd><time datetime="2026-07-11">Saturday, July 11, 2026</time></dd>
+        <dt class="visually-hidden">Location:</dt>
+        <dd>Dunkeld, Perthshire, TD3 6SD</dd>
+        <dt class="visually-hidden">Wedding is in:</dt>
+        <dd><CountDown /></dd>
+    </dl>
     
-    <p>Perthshire, TD3 6SD</p>
-
-    <CountDown />
-
-    
-</section>
+</div>
 
 <style>
 

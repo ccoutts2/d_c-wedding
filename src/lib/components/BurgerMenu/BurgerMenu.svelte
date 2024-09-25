@@ -1,22 +1,23 @@
 <script lang="ts">
     export let isOpen: boolean;
+    export let scrollIntoView: (target: HTMLAnchorElement) => void;
   </script>
   
   <section class="BurgerMenu" class:open={isOpen}>
     <h2>
       Clare and David's Wedding
     </h2>
-    <menu>
+    <ul>
       <li><a href='/'>Home</a></li>
-      <li><a href='/'>Order of the day</a></li>
+      <li><a href='/schedule' on:click|preventDefault={scrollIntoView}>Order of the day</a></li>
       <li><a href='/'>Travel</a></li>
       <li><a href='/'>Q & A</a></li>
-    </menu>
+    </ul>
   </section>
   
   <style>
     .BurgerMenu {
-        background: rgba(255, 255, 255, 0.97);
+      background: rgba(255, 255, 255, 0.97);
       height: 100vh;
       left: 0;
       padding: 2rem 1rem;
@@ -46,7 +47,7 @@
         color: #358d90;
     }
 
-    .BurgerMenu menu {
+    .BurgerMenu ul {
         margin: 0;
         padding: 0;
         list-style: none;
