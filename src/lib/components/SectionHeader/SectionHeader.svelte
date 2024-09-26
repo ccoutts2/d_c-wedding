@@ -10,3 +10,7 @@
 <span>
     <h2>{label}</h2>
 </span>
+
+<style>
+
+</style>

@@ -11,15 +11,7 @@ import BurgerMenu from "$lib/components/BurgerMenu/BurgerMenu.svelte";
 export let isOpen: boolean = false;
 const toggleMenu = () => {
         isOpen =!isOpen;
-    }  
-
- export let scrollIntoView = ( target: HTMLAnchorElement )  => {
-    const el = document.querySelector(target.getAttribute('href')!);
-    if (!el) return;
-    el.scrollIntoView({
-        behavior: 'smooth'
-    });
- }   
+    }   
 </script>
 
 <main>
@@ -28,7 +20,7 @@ const toggleMenu = () => {
     <BurgerButton {toggleMenu} {isOpen} />
 </nav>
 
-<BurgerMenu {isOpen} {scrollIntoView} />
+<BurgerMenu {isOpen} />
 
 <div class='Image'>
     <img src={chris} alt=""/>
@@ -38,11 +30,22 @@ const toggleMenu = () => {
 </div>
 
 <div class="RightCol">
-<Invitation />
+<section id="home">
+    <Invitation />
+</section>
 
-<section>
+<section id="schedule">
     <SectionHeader label="Order of the day" />
 </section>
+
+<section id="travel">
+    <SectionHeader label="Travel" />
+</section>
+
+<section id="qa">
+    <SectionHeader label="Q & A" />
+</section>
+
 </div>
 
 
@@ -78,6 +81,10 @@ const toggleMenu = () => {
         height: 100%;
         object-fit: cover;
         width: 100%;
+    }
+
+    section {
+        margin: 100vh 0;
     }
 </style>
 

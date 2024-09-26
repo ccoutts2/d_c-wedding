@@ -1,6 +1,5 @@
 <script lang="ts">
     export let isOpen: boolean;
-    export let scrollIntoView: (target: HTMLAnchorElement) => void;
   </script>
   
   <section class="BurgerMenu" class:open={isOpen}>
@@ -8,10 +7,10 @@
       Clare and David's Wedding
     </h2>
     <ul>
-      <li><a href='/'>Home</a></li>
-      <li><a href='/schedule' on:click|preventDefault={scrollIntoView}>Order of the day</a></li>
-      <li><a href='/'>Travel</a></li>
-      <li><a href='/'>Q & A</a></li>
+      <li><a href='#home'>Home</a></li>
+      <li><a href='#schedule'>Order of the day</a></li>
+      <li><a href='#travel'>Travel</a></li>
+      <li><a href='#qa'>Q & A</a></li>
     </ul>
   </section>
   
